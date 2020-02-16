@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colorgame</title>
+    <title>TabOnColorGame</title>
     <link rel="stylesheet" href="css/main.css">
     <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
 </head>
@@ -21,8 +21,8 @@
         </div>
     </div>
     <div id="score-block" class="score-block">
-        <h1>Вы проиграли</h1>
-        <h2>Выш лучший счет: </h2>
+        <h1>Игра окончена</h1>
+        <h2 id="score-block-description"></h2>
         <button onclick="CheckSize(ChosenSize);">Начать заново</button>
     </div>
     <div class="table-panel">
@@ -42,6 +42,7 @@
                 <div id="time-bar" class="time-bar-level"></div>
             </div>
         </div>
+        <div id="show-score-block" class="show-score-block">0</div>
     </div>
 
     <script src="js/CreateTable.js"></script>

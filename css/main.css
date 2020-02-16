@@ -1,4 +1,6 @@
-
+body{
+    background-image: url("../img/tools.png");
+}
 table{
     display: inline-block;
 }
@@ -8,6 +10,31 @@ table tr td {
     background-color: rgb(94, 94, 94);
     cursor: pointer;
     text-align: center;
+}
+button{
+    cursor: pointer;
+    outline: none;
+    transition: 0.5s;
+
+}
+#btn1, #btn2, #btn3, .score-block button{
+    width: 100px;
+    height: 40px;
+    background-color: rgb(187, 187, 187);;
+    border: none;
+    font-weight: bold;
+    color: #fff;
+    font-size: 16px;;
+    border-radius: 20px;
+}
+#btn1:hover{
+    width: 90px;
+}
+#btn2:hover{
+    width: 90px;
+}
+#btn3:hover{
+    width: 90px;
 }
 .target-color-block{
     display: flex;
@@ -42,6 +69,12 @@ table tr td:hover{
 .time-bar-block{
     text-align: center;
     display: none;
+    margin-top: 40px;
+}
+.show-score-block{
+    text-align: center;
+    font-size: 50px;
+    color: rgb(130, 130, 130);
 }
 .time-bar-back{
     display: inline-block;
@@ -58,13 +91,20 @@ table tr td:hover{
     border-radius: 10px;
 }
 .score-block{
+    padding-top: 90px;
     display: none;
     position: fixed;
     left: 50%;
     top: 100px;
     transform: translateX(-50%);
-    height: 400px;
+    height: 314px;
     width: 50%;
-    border: 1px solid rgb(94, 94, 94);
+    color: rgb(130, 130, 130);
+    background-color: #fff;
+    border-radius: 20px;
     text-align: center;
+    box-shadow: 0 0 10px rgb(194, 192, 192);
+}
+.score-block button{
+    width: 140px;
 }

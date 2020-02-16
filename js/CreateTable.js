@@ -3,6 +3,7 @@ var ShowColorCodeCheckbox = document.getElementById("ShowText");
 var timeBarBlock = document.getElementById("time-block");
 var timeBar = document.getElementById("time-bar");
 var scoreBlock = document.getElementById("score-block");
+var scoreDisplay = document.getElementById("show-score-block");
 
 var ArrayOfColors = new Array();
 var ArrayOfChars = new Array('A', 'B', 'C', 'D', 'E', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'); //массив символов, необходимых для генерации кода
@@ -59,13 +60,16 @@ function CheckSize(size){
 function ClearTable(){
     var TargetColorDiv = document.getElementById("target-color");
     MainTablePanel.innerHTML = "";
-    TargetColorDiv.style.backgroundColor = "#FFF";
+    TargetColorDiv.style.backgroundColor = "transparent";
     timeBarBlock.style.display = "none";
+    scoreDisplay.innerHTML = 0;
+    scoreDisplay.style.display = "none";
 }
 
 function CreateTablePanel(size){
     ArrayOfColors = new Array();
     ArrayOfAddedColors = new Array();
+    scoreDisplay.style.display = "block";
     timeBarBlock.style.display = "block";
     idLoose = false;
     TimeBarMovement();
@@ -111,6 +115,7 @@ function CompareResultsOfColors(index){
     var TargerColorDiv = document.getElementById("target-color");
     if(index.style.backgroundColor == TargerColorDiv.style.backgroundColor){
         Score++;
+        scoreDisplay.innerHTML = Score;
         RightColorIsChosen = true;
         CreateTablePanel(ChosenSize);
     } else {
@@ -125,6 +130,8 @@ function CompareResultsOfColors(index){
 
 function Loose(){
     //alert("Вы проиграли, ваш счет: " + Score + ". Ваш лучший счет: " + BestScore); //попытка записать cookie
+    var textBlock = document.getElementById("score-block-description");
+    textBlock.innerHTML = "Вы набрали " + Score + " очков. Ваш лучший счет: " + BestScore;
     Score = 0;
     idLoose = true;
     repeat = 0;
