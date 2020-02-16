@@ -2,6 +2,7 @@ var MainTablePanel = document.getElementById("TablePanel");
 var ShowColorCodeCheckbox = document.getElementById("ShowText");
 var timeBarBlock = document.getElementById("time-block");
 var timeBar = document.getElementById("time-bar");
+var scoreBlock = document.getElementById("score-block");
 
 var ArrayOfColors = new Array();
 var ArrayOfChars = new Array('A', 'B', 'C', 'D', 'E', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'); //массив символов, необходимых для генерации кода
@@ -23,7 +24,7 @@ function TimeBarMovement(){  //движение градусника
         repeat = 1;
         var width = 100;
         timeBar.style.width = width + "%";
-        var id = setInterval(frame, 20);
+        var id = setInterval(frame, 30);
         function frame() {
             if(width < 1 || RightColorIsChosen == true || idLoose == true){
                 clearInterval(id);
@@ -31,6 +32,7 @@ function TimeBarMovement(){  //движение градусника
                 timeBar.style.width = 100 + "%";
                 if(width < 1){
                     Loose();
+                    ClearTable();
                 }
                 RightColorIsChosen = false;
                 if(idLoose == false) {
@@ -47,9 +49,10 @@ function TimeBarMovement(){  //движение градусника
     }
 }
 
-function ChrckSize(size){
+function CheckSize(size){
     Score = 0;
     ChosenSize = size;
+    scoreBlock.style.display = "none";
     CreateTablePanel(ChosenSize);
 }
 
@@ -121,10 +124,11 @@ function CompareResultsOfColors(index){
 }
 
 function Loose(){
-    alert("Вы проиграли, ваш счет: " + Score + ". Ваш лучший счет: " + BestScore); //попытка записать cookie
+    //alert("Вы проиграли, ваш счет: " + Score + ". Ваш лучший счет: " + BestScore); //попытка записать cookie
     Score = 0;
     idLoose = true;
     repeat = 0;
+    scoreBlock.style.display = "block";
 }
 
 function AddTargetColor(){

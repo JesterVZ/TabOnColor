@@ -10,15 +10,20 @@
 <body>
     <div class="button-panel-header">
         <div>
-            <button id="btn1" onclick="ChrckSize(3);">3 на 3</button>
-            <button id="btn2" onclick="ChrckSize(4);">4 на 4</button>
-            <button id="btn3" onclick="ChrckSize(5);">5 на 5</button>
+            <button id="btn1" onclick="CheckSize(3);">3 на 3</button>
+            <button id="btn2" onclick="CheckSize(4);">4 на 4</button>
+            <button id="btn3" onclick="CheckSize(5);">5 на 5</button>
         </div>
 
         <div>
             <input id="ShowText" name="ShowText" type="checkbox">
             <label for="ShowText">Показывать код цвета</label>
         </div>
+    </div>
+    <div id="score-block" class="score-block">
+        <h1>Вы проиграли</h1>
+        <h2>Выш лучший счет: </h2>
+        <button onclick="CheckSize(ChosenSize);">Начать заново</button>
     </div>
     <div class="table-panel">
         <div class="target-color-block">
@@ -38,6 +43,7 @@
             </div>
         </div>
     </div>
+
     <script src="js/CreateTable.js"></script>
 </body>
 </html>
