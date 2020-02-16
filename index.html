@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorgame</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+</head>
+<body>
+    <div class="button-panel-header">
+        <div>
+            <button id="btn1" onclick="ChrckSize(3);">3 на 3</button>
+            <button id="btn2" onclick="ChrckSize(4);">4 на 4</button>
+            <button id="btn3" onclick="ChrckSize(5);">5 на 5</button>
+        </div>
+
+        <div>
+            <input id="ShowText" name="ShowText" type="checkbox">
+            <label for="ShowText">Показывать код цвета</label>
+        </div>
+    </div>
+    <div class="table-panel">
+        <div class="target-color-block">
+            <div id="target-color">
+
+            </div>
+        </div>
+
+        <div class="panel-block">
+            <table id="TablePanel">
+
+            </table>
+        </div>
+        <div class="time-bar-block" id="time-block">
+            <div class="time-bar-back">
+                <div id="time-bar" class="time-bar-level"></div>
+            </div>
+        </div>
+    </div>
+    <script src="js/CreateTable.js"></script>
+</body>
+</html>
