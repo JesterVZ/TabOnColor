@@ -4,6 +4,7 @@ var timeBarBlock = document.getElementById("time-block");
 var timeBar = document.getElementById("time-bar");
 var scoreBlock = document.getElementById("score-block");
 var scoreDisplay = document.getElementById("show-score-block");
+var buttonPanel = document.getElementById("button-panel");
 
 var ArrayOfColors = new Array();
 var ArrayOfChars = new Array('A', 'B', 'C', 'D', 'E', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'); //массив символов, необходимых для генерации кода
@@ -20,12 +21,12 @@ var BestScore = 0;
 
 var repeat = 0;
 
-function TimeBarMovement(){  //движение градусника
+function TimeBarMovement(seconds){  //движение градусника
     if(repeat == 0){
         repeat = 1;
         var width = 100;
         timeBar.style.width = width + "%";
-        var id = setInterval(frame, 30);
+        var id = setInterval(frame, seconds);
         function frame() {
             if(width < 1 || RightColorIsChosen == true || idLoose == true){
                 clearInterval(id);
@@ -37,7 +38,7 @@ function TimeBarMovement(){  //движение градусника
                 }
                 RightColorIsChosen = false;
                 if(idLoose == false) {
-                    TimeBarMovement();
+                    TimeBarMovement(seconds);
                 } else {
                     clearInterval(id);
                 }
@@ -71,8 +72,17 @@ function CreateTablePanel(size){
     ArrayOfAddedColors = new Array();
     scoreDisplay.style.display = "block";
     timeBarBlock.style.display = "block";
+    buttonPanel.style.display = "none";
     idLoose = false;
-    TimeBarMovement();
+
+    switch (size){ 
+        case 3:
+            TimeBarMovement(30);
+        case 4:
+            TimeBarMovement(40);
+        case 5:
+            TimeBarMovement(50);
+    }
 
     if(ShowColorCodeCheckbox.checked == true){ 
         isShowColorCode = true;
@@ -114,7 +124,18 @@ function CreateTablePanel(size){
 function CompareResultsOfColors(index){
     var TargerColorDiv = document.getElementById("target-color");
     if(index.style.backgroundColor == TargerColorDiv.style.backgroundColor){
-        Score++;
+        if(timeBar.style.width > "90%"){
+            Score = Score + 6;
+        }
+        if(timeBar.style.width > "60%" && timeBar.style.width < "90%"){
+            Score = Score + 3
+        }
+        if(timeBar.style.width > "30%" && timeBar.style.width < "60%"){
+            Score = Score + 2;
+        }
+        if(timeBar.style.width > "1%" && timeBar.style.width < "30%"){
+            Score++;
+        }
         scoreDisplay.innerHTML = Score;
         RightColorIsChosen = true;
         CreateTablePanel(ChosenSize);
@@ -136,6 +157,7 @@ function Loose(){
     idLoose = true;
     repeat = 0;
     scoreBlock.style.display = "block";
+    buttonPanel.style.display = "flex";
 }
 
 function AddTargetColor(){
