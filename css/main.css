@@ -108,3 +108,14 @@ table tr td:hover{
 .score-block button{
     width: 140px;
 }
+@media(max-width: 760px){
+    .time-bar-back{
+        width: 80%;
+    }
+}
+@media(max-width: 900px){
+    .button-panel-header{
+        display: block !important;
+        text-align: center;
+    }
+}

@@ -75,9 +75,9 @@ function CreateTablePanel(size){
     buttonPanel.style.display = "none";
     idLoose = false;
 
-    switch (size){ 
+   switch (size){ 
         case 3:
-            TimeBarMovement(30);
+            TimeBarMovement(20);
         case 4:
             TimeBarMovement(40);
         case 5:
