@@ -75,14 +75,14 @@ function CreateTablePanel(size){
     buttonPanel.style.display = "none";
     idLoose = false;
 
-   switch (size){ 
+  /* switch (size){ 
         case 3:
             TimeBarMovement(20);
         case 4:
             TimeBarMovement(40);
         case 5:
             TimeBarMovement(50);
-    }
+    }*/
 
     if(ShowColorCodeCheckbox.checked == true){ 
         isShowColorCode = true;
@@ -157,7 +157,7 @@ function Loose(){
     idLoose = true;
     repeat = 0;
     scoreBlock.style.display = "block";
-    buttonPanel.style.display = "flex";
+    buttonPanel.style.display = "block";
 }
 
 function AddTargetColor(){

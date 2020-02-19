@@ -17,6 +17,12 @@ button{
     transition: 0.5s;
 
 }
+table tr td:hover{
+    width: 80px;
+    height: 80px;
+    border: 3px solid #fff;
+}
+/*по типу*/
 #btn1, #btn2, #btn3, .score-block button{
     width: 100px;
     height: 40px;
@@ -36,16 +42,6 @@ button{
 #btn3:hover{
     width: 90px;
 }
-.target-color-block{
-    display: flex;
-    justify-content: center;
-
-}
-table tr td:hover{
-    width: 80px;
-    height: 80px;
-    border: 3px solid #fff;
-}
 #target-color{
     width: 100px;
     height: 100px;
@@ -54,13 +50,19 @@ table tr td:hover{
     align-items: center;
     margin-bottom: 100px;
 }
+/*по id*/
+.target-color-block{
+    display: flex;
+    justify-content: center;
+
+}
 .panel-block{
     display: block;
     text-align: center;
 }
 .button-panel-header{
-    display: flex;
-    justify-content: center;
+    display: block;
+    text-align: center;
     margin-bottom: 30px;
 }
 .button-panel-header div{
@@ -108,6 +110,27 @@ table tr td:hover{
 .score-block button{
     width: 140px;
 }
+/*медиа-запросы для адаптива*/
+@media(max-width: 340px){
+    #btn1, #btn2, #btn3{
+        width: 60px;
+        font-weight: normal;
+        margin: 0px 10px;
+    }
+    #target-color{
+        width: 50px;
+        height: 50px;
+        margin-bottom: 60px;
+    }
+    table tr td{
+        width: 50px;
+        height: 50px;
+    }
+    .score-block{
+        width: 90%;
+        height: 240px;
+    }
+}
 @media(max-width: 760px){
     .time-bar-back{
         width: 80%;
@@ -115,7 +138,7 @@ table tr td:hover{
 }
 @media(max-width: 900px){
     .button-panel-header{
-        display: block !important;
+        display: block;
         text-align: center;
     }
 }
