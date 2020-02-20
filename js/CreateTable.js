@@ -1,5 +1,7 @@
 var MainTablePanel = document.getElementById("TablePanel");
 var ShowColorCodeCheckbox = document.getElementById("ShowText");
+var TimeEnableCheckbox = document.getElementById("TimeEnable");
+
 var timeBarBlock = document.getElementById("time-block");
 var timeBar = document.getElementById("time-bar");
 var scoreBlock = document.getElementById("score-block");
@@ -74,14 +76,15 @@ function CreateTablePanel(size){
     timeBarBlock.style.display = "block";
     buttonPanel.style.display = "none";
     idLoose = false;
-
-    switch (size){ 
-        case 3:
-            TimeBarMovement(20);
-        case 4:
-            TimeBarMovement(40);
-        case 5:
-            TimeBarMovement(50);
+    if(TimeEnableCheckbox.checked == true){
+        switch (size){ 
+            case 3:
+                TimeBarMovement(20);
+            case 4:
+                TimeBarMovement(40);
+            case 5:
+                TimeBarMovement(50);
+        }
     }
 
     if(ShowColorCodeCheckbox.checked == true){ 
