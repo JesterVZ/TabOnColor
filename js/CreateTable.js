@@ -75,14 +75,14 @@ function CreateTablePanel(size){
     buttonPanel.style.display = "none";
     idLoose = false;
 
-  /* switch (size){ 
+    switch (size){ 
         case 3:
             TimeBarMovement(20);
         case 4:
             TimeBarMovement(40);
         case 5:
             TimeBarMovement(50);
-    }*/
+    }
 
     if(ShowColorCodeCheckbox.checked == true){ 
         isShowColorCode = true;
@@ -150,12 +150,12 @@ function CompareResultsOfColors(index){
 }
 
 function Loose(){
-    //alert("Вы проиграли, ваш счет: " + Score + ". Ваш лучший счет: " + BestScore); //попытка записать cookie
     var textBlock = document.getElementById("score-block-description");
     textBlock.innerHTML = "Вы набрали " + Score + " очков. Ваш лучший счет: " + BestScore;
     Score = 0;
     idLoose = true;
     repeat = 0;
+    $(scoreBlock).fadeIn(600); //плавное появление итоговой таблицы счета
     scoreBlock.style.display = "block";
     buttonPanel.style.display = "block";
 }
