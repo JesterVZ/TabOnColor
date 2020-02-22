@@ -11,6 +11,7 @@ var buttonPanel = document.getElementById("button-panel");
 var ArrayOfColors = new Array();
 var ArrayOfChars = new Array('A', 'B', 'C', 'D', 'E', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'); //массив символов, необходимых для генерации кода
 var ArrayOfAddedColors = new Array();
+var ArrayOfScors = new Array();
 
 var isShowColorCode = new Boolean(false); //показывать ли код цвета
 var RightColorIsChosen = new Boolean(false);
@@ -22,7 +23,12 @@ var Score;
 var BestScore = 0;
 
 var repeat = 0;
-
+$(document).ready(function(){
+    BestScore = localStorage.getItem('BestScore');
+    if(BestScore == null){
+        BestScore = 0;
+    }
+});
 function TimeBarMovement(seconds){  //движение градусника
     if(repeat == 0){
         repeat = 1;
@@ -154,6 +160,8 @@ function CompareResultsOfColors(index){
 
 function Loose(){
     var textBlock = document.getElementById("score-block-description");
+    //localStorage.setItem('score', ArrayOfScors.push(Score));
+    localStorage.setItem('BestScore', BestScore);
     textBlock.innerHTML = "Вы набрали " + Score + " очков. Ваш лучший счет: " + BestScore;
     Score = 0;
     idLoose = true;
