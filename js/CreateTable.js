@@ -24,6 +24,9 @@ var BestScore = 0;
 
 var repeat = 0;
 $(document).ready(function(){
+    for(var i = 0; i < localStorage.getItem('score').length; i++){
+        ArrayOfScors[i] = localStorage.getItem('score')[i];
+    }
     BestScore = localStorage.getItem('BestScore');
     if(BestScore == null){
         BestScore = 0;
@@ -160,7 +163,7 @@ function CompareResultsOfColors(index){
 
 function Loose(){
     var textBlock = document.getElementById("score-block-description");
-    //localStorage.setItem('score', ArrayOfScors.push(Score));
+    localStorage.setItem('score', ArrayOfScors.push(Score)); //создание массива счетов за все время 
     localStorage.setItem('BestScore', BestScore);
     textBlock.innerHTML = "Вы набрали " + Score + " очков. Ваш лучший счет: " + BestScore;
     Score = 0;

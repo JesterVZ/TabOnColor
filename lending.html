@@ -3,13 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/lending.css">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="shortcut icon" href="favicon.ICO">
     <title>TabOnColor</title>
 </head>
-<body>
-    <section>
-        <h1>TabTheColor</h1>
-        <h2>Развивай реакцию и внимательность</h2>
-        <button>Начать играть</button>
+<body class="preload">
+    <div class="top-menu wow bounceInDown" data-wow-offset="10" data-wow-duration="1s">
+        <ul>
+            <li>Главная</li>
+            <li>Об игре</li>
+            <li>Контакты</li>
+        </ul>
+    </div>
+    <section class="header-section">
+        <h1 id="header"></h1>
+        <h2 id="description"></h2>
+        <button class="wow fadeInUp" data-wow-duration="1s" onclick="window.location.href='index.html'">Начать играть</button>
     </section>
+    <section class="footer">
+
+    </section>
+    <script src="js/JQuery/Jquery.js"></script>
+    <script src="js/Wow/wow.min.js"></script>
+    <script src="js/TypeIt/typeit.min.js"></script>
+    <script src="js/TypeItFunction.js"></script>
+
+    <script>
+        $(window).on('load', function(){
+            $("body").removeClass("preload");
+        })
+        new WOW().init();
+    </script>
 </body>
 </html>

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TabOnColorGame</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="shortcut icon" href="favicon.ICO">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
 </head>
 <body>
     <div class="button-panel-header" id="button-panel">
@@ -30,23 +32,26 @@
         <button onclick="CheckSize(ChosenSize);">Начать заново</button>
     </div>
     <div class="table-panel">
-        <div class="target-color-block">
-            <div id="target-color">
-
+        <div class="app">
+            <div class="target-color-block">
+                <div id="target-color">
+    
+                </div>
             </div>
-        </div>
-
-        <div class="panel-block">
-            <table id="TablePanel">
-
-            </table>
-        </div>
-        <div class="time-bar-block" id="time-block">
-            <div class="time-bar-back">
-                <div id="time-bar" class="time-bar-level"></div>
+    
+            <div class="panel-block">
+                <table id="TablePanel">
+    
+                </table>
             </div>
+            <div class="time-bar-block" id="time-block">
+                <div class="time-bar-back">
+                    <div id="time-bar" class="time-bar-level"></div>
+                </div>
+            </div>
+            <div id="show-score-block" class="show-score-block">0</div>
         </div>
-        <div id="show-score-block" class="show-score-block">0</div>
+
     </div>
     <script src="js/JQuery/Jquery.js"></script>
     <script src="js/CreateTable.js"></script>
